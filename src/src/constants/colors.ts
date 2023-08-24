@@ -1,0 +1,9 @@
+export const VIOLET = '#6a5ecc';
+export const GREY400 = '#bdbdbd';
+export const GREY700 = '#616161';
+export const BLACK = '#1e1231';
+export const YELLOW_LIGHT = '#fff5da';
+export const YELLOW = '#dea200';
+export const GREEN_LIGHT = '#ddffda';
+export const GREEN = '#0ea101';
+export const WHITE = '#ffffff';

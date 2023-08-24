@@ -1,0 +1,113 @@
+@import 'src/assets/styles/variables';
+@import 'src/assets/styles/mixins';
+
+.images-slider {
+    position: relative;
+    height: 100%;
+    border-radius: 10px;
+    &__image {
+        background-size: cover;
+        background-position: center;
+        height: 185px;
+        border-radius: 10px;
+        @include middleTablet {
+            height: 165px;
+        }
+        @include tablet {
+            height: 155px;
+        }
+        @include mobile {
+            height: 180px;
+        }
+        @include mobileMiddle {
+            height: 220px;
+        }
+    }
+    .swiper,
+    .swiper-slide,
+    .swiper-wrapper {
+        border-radius: 10px;
+    }
+    .swiper-horizontal > .swiper-pagination-bullets,
+    .swiper-pagination-bullets.swiper-pagination-horizontal {
+        bottom: 0;
+    }
+    .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+    .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 0 3px;
+    }
+    .swiper-pagination-bullet {
+        width: 6px;
+        height: 6px;
+        background-color: $white;
+        opacity: 0.5;
+        &-active,
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        background: rgba($color: $white, $alpha: 0.5);
+        border-radius: 50%;
+        top: 50%;
+        margin-top: 0;
+        &:hover {
+            background: rgba($color: $white, $alpha: 0.6);
+        }
+        &:after {
+            display: none;
+        }
+        &.swiper-button-disabled {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+    .swiper-button-next {
+        right: 10px;
+        transform: translateY(-50%) rotate(180deg);
+    }
+    .swiper-button-prev {
+        transform: translateY(-50%) rotate(0);
+        left: 10px;
+        svg {
+            margin-left: -2px;
+        }
+    }
+
+    &--small {
+        .images-slider__image {
+            height: 175px;
+        }
+    }
+    &--big {
+        .images-slider__image {
+            height: 400px;
+            @include middleTablet {
+                height: 360px;
+            }
+            @include tablet {
+                height: 220px;
+            }
+            @include mobile {
+                height: 270px;
+            }
+            @include mobileMiddle {
+                height: 220px;
+            }
+        }
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+        }
+        .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+        .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+            margin: 5px;
+        }
+    }
+}

@@ -1,0 +1,110 @@
+@import 'src/assets/styles/variables';
+@import 'src/assets/styles/mixins';
+.grid-map {
+    display: flex;
+    justify-content: space-between;
+    min-height: 600px;
+    @include mobile {
+        height: auto;
+    }
+    @include mobile {
+        flex-direction: column-reverse;
+    }
+    &__grid {
+        width: calc((100% - 30px) / 2);
+        @include desktop {
+            width: calc((100% - 20px) / 2);
+        }
+        @include tablet {
+            width: calc(55% - 20px);
+        }
+        @include tabletMini {
+            width: calc(50% - 20px);
+        }
+        @include mobile {
+            width: 100%;
+        }
+        &_cards {
+            width: calc(100% + 30px);
+            margin-left: -15px;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            @include desktop {
+                width: calc(100% + 20px);
+                margin-left: -10px;
+            }
+            @include tabletMini {
+                width: 100%;
+                margin-left: 0;
+            }
+            @include mobile {
+                width: calc(100% + 20px);
+                margin-left: -10px;
+            }
+            @include mobileMiddle {
+                width: 100%;
+                margin-left: 0;
+            }
+            &-item {
+                width: calc((100% - 60px) / 2);
+                margin: 0 15px 30px;
+                @include desktop {
+                    width: calc((100% - 40px) / 2);
+                    margin: 0 10px 20px;
+                }
+                @include tabletMini {
+                    width: 100%;
+                    margin: 0 0 20px;
+                }
+                @include mobile {
+                    width: calc((100% - 40px) / 2);
+                    margin: 0 10px 25px;
+                }
+                @include mobileMiddle {
+                    width: 100%;
+                    margin: 0 0 25px;
+                }
+            }
+        }
+    }
+    &__map {
+        width: calc((1699px - 70px) / 2);
+        height: 70vh;
+        max-height: 770px;
+        border-radius: 16px;
+        margin-bottom: 70px;
+        overflow: hidden;
+        @include desktopLarge {
+            width: calc(50vw - 30px);
+        }
+        @include tablet {
+            width: calc(45vw - 30px);
+            height: 500px;
+        }
+        @include tabletMini {
+            width: calc((100vw - 40px) / 2);
+        }
+        @include mobile {
+            width: 100%;
+            margin-bottom: 35px;
+            height: 360px;
+        }
+        &--relative {
+            position: relative;
+        }
+        &--fixed {
+            position: fixed;
+            top: 78px;
+            right: calc((100vw - 1699px + 40px) / 2);
+            @include desktopLarge {
+                right: 24px;
+            }
+            @include mobile {
+                position: relative;
+                top: initial;
+                right: initial;
+            }
+        }
+    }
+}

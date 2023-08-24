@@ -1,0 +1,1 @@
+export { getAddresses } from './findAddresses';

@@ -1,0 +1,13 @@
+@import 'src/assets/styles/variables';
+.back-button {
+    display: flex;
+    align-items: center;
+    h4 {
+        color: $grey700;
+        font-weight: 600;
+        margin-left: 4px;
+    }
+    &:hover {
+        opacity: 0.8;
+    }
+}

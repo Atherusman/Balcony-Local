@@ -1,0 +1,10 @@
+export type { tSvg } from './tSvg';
+export type { tSearchData, tInfo } from './tSearchData';
+export type { tDocs, tDoc, tSaleInfo, tHouseSmall, tHistory } from './tCard';
+export type { tFile } from './tFile';
+export type { tCoord } from './tCoord';
+export type { tView } from './tView';
+export type { tMunicipality } from './tMunicipality';
+export type { tTab } from './tTab';
+export type { tUser } from './tUser';
+export type { tInfiniteScroll } from './tInfiniteScroll';

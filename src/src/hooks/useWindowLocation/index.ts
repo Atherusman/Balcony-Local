@@ -1,0 +1,1 @@
+export { useWindowLocation } from './useWindowLocation';

@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap');
+@font-face {
+    font-family: 'AcademyEngravedStd';
+    src: local('AcademyEngravedStd'),
+        url('../fonts/AcademyEngravedStd/AcademyEngravedStd.ttf') format('truetype');
+    font-weight: bold;
+}
+
+$Abel: 'Abel', sans-serif;
+$Inter: 'Inter', sans-serif;
+$Urbanist: 'Urbanist', sans-serif;
+$AcademyEngravedStd: 'AcademyEngravedStd', sans-serif;
+
+//colors
+$black: #1e1231;
+$white: #ffffff;
+$violet: #6a5ecc;
+$violetLight: #fbfaff;
+$grey: #b0adb4;
+$greyLight: #f5f5f5;
+$grey200: #eeeeee;
+$grey300: #e0e0e0;
+$grey400: #bdbdbd;
+$grey600: #757575;
+$grey700: #616161;
+$greyBG: #fbfbfb;
+$yellowLight: #fff5da;
+$yellow: #dea200;
+$greenLight: #ddffda;
+$green: #0ea101;
+
+// Media queries
+$xxxl: 1920px;
+$xxl: 1699px;
+$xl: 1399px;
+$l: 1299px;
+$m: 1199px;
+$s: 1024px;
+$xs: 767px;
+$xxs: 599px;
+$xxxs: 375px;

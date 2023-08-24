@@ -1,0 +1,105 @@
+@import 'src/assets/styles/variables';
+@import 'src/assets/styles/mixins';
+.base-select {
+    display: flex;
+    align-items: center;
+    &__addition {
+        color: $grey700;
+        margin-right: 8px;
+    }
+    &__content {
+        position: relative;
+    }
+    &__select {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        cursor: pointer;
+        &--m {
+            max-width: 120px;
+            min-width: 120px;
+        }
+        &--s {
+            max-width: 85px;
+            min-width: 85px;
+        }
+        &-icon {
+            width: 16px;
+            height: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+            transform: rotate(-90deg);
+            &--open {
+                transform: rotate(90deg);
+            }
+        }
+        &-input {
+            max-width: calc(100% - 20px);
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            border: none;
+            outline: none;
+            color: $black;
+            font-weight: 600;
+            width: 100%;
+            margin: 0 4px 0 0;
+            cursor: pointer !important;
+            &:focus {
+                outline: none !important;
+            }
+            &::placeholder {
+                color: $black;
+            }
+        }
+    }
+    .dropdown {
+        &--open {
+            display: block;
+            position: absolute;
+            transform: translateY(100%);
+            transition: 1s ease-in-out;
+            width: 100%;
+            bottom: 0;
+            z-index: 99;
+        }
+        &--close {
+            display: none;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 8px;
+            transition: 1s ease-in-out;
+        }
+        &__list {
+            width: 100%;
+            max-height: 150px;
+            margin-top: 8px;
+            background-color: $white;
+            border: 1px solid $grey200;
+            border-radius: 8px;
+            overflow: hidden;
+            overflow-y: auto;
+            &_item {
+                width: 100%;
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                text-align: left;
+                padding: 6px 8px;
+                font-size: 14px;
+                line-height: 1.5;
+                color: $black;
+                background-color: $white;
+                cursor: pointer;
+                transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+                &:hover,
+                &--active {
+                    background: $grey200;
+                }
+            }
+        }
+    }
+}

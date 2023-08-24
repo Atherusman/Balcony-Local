@@ -1,0 +1,85 @@
+@import 'src/assets/styles/variables';
+@import 'src/assets/styles/mixins';
+.search-header {
+    padding: 16px 0;
+    background-color: $white;
+    border-bottom: 1px solid $greyLight;
+    &__content {
+        display: flex;
+        gap: 0 16px;
+        @include middleTablet {
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        @include mobile {
+            gap: 0;
+        }
+        &_small {
+            max-width: 28%;
+            width: 100%;
+            @include middleTablet {
+                max-width: calc(100% - 80px);
+            }
+            @include tabletMini {
+                max-width: calc(100% - 76px);
+            }
+            @include mobile {
+                max-width: 100%;
+                margin-bottom: 16px;
+            }
+        }
+        &_big {
+            width: 100%;
+            transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+            max-height: 100%;
+
+            @include middleTablet {
+                order: 3;
+            }
+            @include mobile {
+                order: 0;
+                &--hide {
+                    display: none;
+                    margin-bottom: 0;
+                }
+                &--show {
+                    margin-bottom: 16px;
+                }
+            }
+        }
+        &_buttons {
+            @include mobile {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 8px 12px;
+                margin: 0 auto;
+            }
+            .main-button {
+                &:last-child {
+                    display: none;
+                    @include mobile {
+                        display: block;
+                    }
+                }
+                @include mobile {
+                    width: calc((100% - 12px) / 2);
+                }
+                .text {
+                    display: none;
+                    @include mobile {
+                        display: inline-block;
+                        margin-right: 5px;
+                    }
+                }
+                svg {
+                    @include mobile {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

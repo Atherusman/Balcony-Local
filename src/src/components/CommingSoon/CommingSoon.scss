@@ -1,0 +1,15 @@
+@import 'src/assets/styles/variables';
+@import 'src/assets/styles/mixins';
+
+.comming_soon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px 0;
+    padding: 4rem;
+    &__text {
+        @include fontStyle($ff: $Abel, $fs: 28px, $lh: 1.2, $fw: 500);
+        text-align: center;
+    }
+}

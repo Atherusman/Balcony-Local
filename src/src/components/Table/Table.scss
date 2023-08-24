@@ -1,0 +1,135 @@
+@import 'src/assets/styles/variables';
+@import 'src/assets/styles/mixins';
+
+.table {
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    table {
+        width: 100%;
+        min-width: 1100px;
+        thead {
+            border-top: 1px solid $greyLight;
+            border-bottom: 1px solid $greyLight;
+            th {
+                @include fontStyle($fs: 18px, $lh: 1.6, $fw: 500);
+                color: $grey;
+                height: 42px;
+                vertical-align: middle;
+                white-space: nowrap;
+            }
+        }
+        tbody {
+            tr {
+                border-bottom: 1px solid $greyLight;
+
+                &.pointer {
+                    transition: all 0.3s ease-in-out;
+                    cursor: pointer;
+                    &:hover {
+                        background: rgba($color: $violetLight, $alpha: 0.7);
+                    }
+                }
+                td {
+                    max-width: 300px;
+                    height: 89px;
+                    vertical-align: middle;
+                    .image {
+                        width: 108px;
+                        height: 57px;
+                        box-shadow: 0px 4px 60px rgba(4, 6, 15, 0.05);
+                        border-radius: 6px;
+                        background-size: cover;
+                        background-position: center;
+                        background-image: url(../../assets/images/emptyImg.jpeg);
+                    }
+                    h3 {
+                        color: $black;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        &.light {
+                            color: $grey700;
+                        }
+                        &.title {
+                            font-weight: 600;
+                        }
+                    }
+                    span.outline {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 68px;
+                        height: 30px;
+                        border-radius: 8px;
+                        border: 1px solid $violet;
+                        color: $violet;
+                        font-size: 14px;
+                        font-weight: 600;
+                    }
+                }
+                &.small {
+                    td {
+                        height: 72px;
+                    }
+                }
+                &.violet {
+                    position: relative;
+                    background-color: $violetLight;
+                    position: relative;
+                    td {
+                        h3 {
+                            &.light,
+                            &.text,
+                            &.title {
+                                color: $black;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                    td:first-of-type {
+                        padding-left: 20px;
+                    }
+                }
+            }
+        }
+        td,
+        th {
+            min-width: 86px;
+            padding-right: 30px;
+            text-align: left;
+
+            &:nth-last-child(-n + 2) {
+                padding-right: 15px;
+            }
+
+            &:last-of-type {
+                padding-right: 0;
+            }
+            @include desktop {
+                padding-right: 20px;
+            }
+            &.xs {
+                min-width: 0;
+            }
+        }
+        td {
+            &.xs {
+                min-width: 30px;
+                max-width: 30px;
+                &:empty {
+                    min-width: 0;
+                }
+            }
+        }
+    }
+    &--with-padding {
+        table thead {
+            th:first-of-type {
+                padding-left: 20px;
+            }
+        }
+    }
+}

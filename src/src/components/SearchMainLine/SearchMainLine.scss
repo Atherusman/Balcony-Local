@@ -1,0 +1,27 @@
+@import 'src/assets/styles/variables';
+@import 'src/assets/styles/mixins';
+.search-address {
+    position: relative;
+    &__select {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transform: translateY(100%);
+        width: 100%;
+        z-index: 99;
+        &_content {
+            margin-top: 10px;
+            background-color: $white;
+            border: 1px solid $grey200;
+            border-radius: 16px;
+            max-height: 200px;
+            overflow-y: auto;
+            &-item {
+                padding: 10px 2rem;
+                &:hover {
+                    background-color: $grey200;
+                }
+            }
+        }
+    }
+}

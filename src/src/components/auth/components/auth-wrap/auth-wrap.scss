@@ -1,0 +1,139 @@
+@import 'src/assets/styles/variables';
+@import 'src/assets/styles/mixins';
+
+.auth-content{
+  height: 100%;
+  overflow-y: scroll;
+  padding: 40px;
+  form{
+    width: 100%;
+  }
+  >div{
+      width: 100%;
+  }
+}
+
+.auth-header{
+  text-align: center;
+  p{
+    @include  fontStyle($Abel,64px,1,400);
+    margin-bottom: 12px;
+  }
+  div{
+    *{
+    font-size: 16px;
+  }
+    span{
+      color: $grey600;
+    }
+    a{
+      margin-left: 5px;
+    }
+  }
+}
+
+.auth-buttons{
+  margin-top: 50px;
+  display: flex;
+  button{
+    &:first-child{
+      margin-right: 8px;
+    }
+  }
+  @include mobile{
+      flex-direction: column;
+    button{
+      &:first-child{
+        margin-right: 0px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+.focused_auth_input{
+  .main-input{
+    border: 1px solid #6A5ECC;
+  }
+}
+
+.auth-input-wrap{
+    position: relative;
+    margin-bottom: 20px;
+    >span{
+      color: $grey600;
+      @include fontStyle($Inter, 16px,1,500);
+      margin-bottom: 4px;
+    }
+    input{
+      &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        color: $grey;
+      }
+      &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color: $grey;
+      }
+      &::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: $grey;
+      }
+      &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: $grey;
+      }
+      &::-ms-input-placeholder { /* Microsoft Edge */
+        color: $grey;
+      }
+
+      &::placeholder { /* Most modern browsers support this now. */
+        color: $grey;
+      }
+    }
+    .main-input{
+      padding-right: 50px;
+    }
+  }
+
+.auth-password_icon{
+    position: absolute;
+    right: 20px;
+    z-index: 3;
+    top: 42px;
+    cursor: pointer;
+}
+
+.auth-or{
+  position: relative;
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+  &:after{
+    content:'';
+    width: 100%;
+    height: 1px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    background-color: $grey200;
+    position: absolute;
+    left: 0;
+  }
+  >span{
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    padding: 0 20px;
+    background-color: $greyBG;
+    margin: 0 auto;
+    color: $grey;
+    font-size: 18px;
+  }
+}
+
+.auth-btns-row{
+  display: flex;
+  margin-top:60px;
+  justify-content: center;
+
+}
+.auth-social-error{
+  color: #DE1B00;
+  text-align: center;
+  padding-top: 5px;
+}

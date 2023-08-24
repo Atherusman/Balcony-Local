@@ -1,0 +1,21 @@
+@import 'src/assets/styles/variables';
+.not-found {
+    &__content {
+        height: 100vh;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        h1 {
+            font-size: 65px;
+            line-height: 1.1;
+            color: $black;
+        }
+        h3 {
+            font-size: 25px;
+            line-height: 1.1;
+            color: $black;
+        }
+    }
+}

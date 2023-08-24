@@ -1,0 +1,180 @@
+@import 'src/assets/styles/variables';
+@import 'src/assets/styles/mixins';
+.user {
+    position: relative;
+    background-color: $greyBG;
+    padding: 32px 0 24px;
+    margin-bottom: 20px;
+    @include tabletMini {
+        padding: 16px 0;
+    }
+    &__body {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 0 3.6rem;
+        z-index: 2;
+        padding-top: 8px;
+        @include tablet {
+            gap: 0 24px;
+        }
+        @include tabletMini {
+            flex-wrap: wrap;
+            gap: 16px;
+            padding-top: 0;
+        }
+        &_block {
+            display: flex;
+            align-items: center;
+            gap: 0 16px;
+            background-color: $white;
+            border-radius: 16px;
+            border: 1px solid $greyLight;
+            padding: 24px;
+            min-width: 32rem;
+            @include tablet {
+                padding: 16px;
+            }
+            @include tabletMini {
+                width: 100%;
+                min-width: 0;
+            }
+            &-small {
+                padding: 36px;
+                @include tablet {
+                    padding: 20px;
+                }
+                @include tabletMini {
+                    width: calc((100% - 16px) / 2);
+                }
+                @include mobile {
+                    width: 100%;
+                    padding: 12px;
+                }
+            }
+            &-picture {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 8.8rem;
+                height: 8.8rem;
+                min-width: 8.8rem;
+                min-height: 8.8rem;
+                border-radius: 50%;
+                background-size: cover;
+                background-position: center;
+                color: $black;
+                text-transform: uppercase;
+                margin-right: 8px;
+                @include tablet {
+                    width: 6.5rem;
+                    height: 6.5rem;
+                    min-width: 6.5rem;
+                    min-height: 6.5rem;
+                }
+                @include mobile {
+                    width: 45px;
+                    height: 45px;
+                    min-width: 45px;
+                    min-height: 45px;
+                    margin-right: 0;
+                }
+            }
+            &-text {
+                width: 100%;
+                h1 {
+                    display: flex;
+                    align-items: center;
+                    gap: 0 4px;
+                    margin-bottom: 8px;
+                    color: $black;
+                    @include mobile {
+                        font-size: 20px;
+                        margin-bottom: 0;
+                    }
+                }
+                h5 {
+                    color: $grey600;
+                }
+            }
+        }
+    }
+}
+.profile {
+    flex: 1;
+    min-height: calc(100vh - 102px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding-bottom: 30px;
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        @include tabletMini {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px 0;
+            .base-select__addition {
+                display: none;
+            }
+        }
+        &_part {
+            flex: 1;
+            &:first-of-type {
+                flex: 1.5;
+            }
+            &:last-of-type {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 0 24px;
+                margin: 0 0 0 auto;
+            }
+            @include mobile {
+                width: 100%;
+                &:last-of-type {
+                    justify-content: space-between;
+                }
+            }
+            &-logo {
+                img {
+                    width: 35rem;
+                    height: auto;
+                    margin: 0 auto;
+                }
+            }
+            h1 {
+                text-transform: capitalize;
+                margin-bottom: 4px;
+                @include mobile {
+                    margin-bottom: 6px;
+                }
+            }
+            h5 {
+                color: $grey700;
+            }
+        }
+    }
+    &__body {
+        // flex: 1;
+        // height: calc(100% - 25px);
+        // overflow: hidden;
+        // overflow-y: auto;
+        // padding-bottom: 25px;
+        // margin-bottom: 25px;
+        height: calc(100% - 98px);
+        & > h4 {
+            text-align: center;
+            margin-top: 30px;
+            font-weight: 500;
+        }
+        a {
+            @include fontStyle($fs: 16px, $lh: 1.6, $fw: 500);
+            @include tablet {
+                font-size: 15px;
+            }
+        }
+    }
+}

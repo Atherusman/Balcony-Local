@@ -1,0 +1,129 @@
+@import 'src/assets/styles/variables';
+@import 'src/assets/styles/mixins';
+
+.home {
+    min-width: 100vw;
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0 60px;
+    @include desktop {
+        padding: 80px 0 40px;
+    }
+    @include mobile {
+        padding-top: 64px;
+        background-position: unset;
+    }
+    &__content {
+        background-color: $white;
+        border-radius: 2.4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 0 6rem;
+        margin: 0 20px;
+        max-height: calc(100vh - 140px);
+        @include desktop {
+            max-height: calc(100vh - 120px);
+        }
+        @include desktopLarge {
+            padding: 0 0 3rem;
+        }
+        @include tabletMini {
+            padding: 0 0 16px;
+            width: 100%;
+        }
+        @include mobile {
+            max-height: 100%;
+        }
+
+        &_image {
+            width: 100%;
+            padding: 5rem 0 3.5rem;
+            margin-bottom: 2.4rem;
+            background: $white;
+            border-top-right-radius: 2.4rem;
+            border-top-left-radius: 2.4rem;
+            border-bottom: 1px solid $grey200;
+            cursor: pointer;
+            img {
+                width: auto;
+                height: 5.3rem;
+                margin: 0 auto;
+                @include desktopLarge {
+                    height: 4.5rem;
+                }
+                @include desktop {
+                    height: 4rem;
+                }
+                @include mobile {
+                    height: 20px;
+                }
+            }
+            @include desktopLarge {
+                padding: 4rem;
+                margin-bottom: 35px;
+            }
+            @include mobile {
+                padding: 3.5rem 0;
+            }
+        }
+        &_title {
+            height: 3.4rem;
+            width: auto;
+            margin-bottom: 6.4rem;
+            @include desktopLarge {
+                height: 2.5rem;
+                margin-bottom: 30px;
+            }
+            @include desktop {
+                margin-bottom: 3.5rem;
+            }
+            @include mobile {
+                height: 15px;
+                margin-bottom: 2.5rem;
+            }
+        }
+        &_form {
+            width: 100%;
+            min-width: 107rem;
+            padding: 0 8rem;
+            margin-bottom: 2.4rem;
+            @include desktopLarge {
+                padding: 0 3rem;
+            }
+            @include middleTablet {
+                margin-bottom: 2rem;
+            }
+            @include tabletMini {
+                min-width: 50rem;
+
+                margin-bottom: 16px;
+            }
+            @include mobile {
+                min-width: 0;
+                width: 100%;
+                padding: 0 16px;
+            }
+            &-label {
+                @include fontStyle($fs: 16px, $lh: 1.125, $fw: 500);
+                color: $grey600;
+                padding: 0 0 0 8px;
+                margin-bottom: 4px;
+            }
+        }
+        &_button {
+            margin-top: 3rem;
+            margin-bottom: 10px;
+            @include desktopLarge {
+                margin-top: 0;
+            }
+            @include desktop {
+                margin-top: 8px;
+            }
+        }
+    }
+}

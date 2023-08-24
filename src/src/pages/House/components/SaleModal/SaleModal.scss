@@ -1,0 +1,119 @@
+@import 'src/assets/styles/variables';
+@import 'src/assets/styles/mixins';
+.sale-info {
+    overflow-y: auto;
+    // max-height: calc(100% - 70px);
+    & > h2 {
+        padding: 0 24px 17px;
+        @include mobile {
+            padding: 0 20px 17px;
+        }
+    }
+    &__blocks {
+        display: flex;
+        flex-direction: column;
+        gap: 24px 0;
+
+        &_line {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 24px;
+            border: 1px solid $greyLight;
+            box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.02);
+            @include mobile {
+                padding: 20px;
+            }
+            .line-grid {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                @include mobile {
+                    gap: 24px 0;
+                }
+                &__item {
+                    width: calc(100% / 3);
+                    max-width: 320px;
+                    @include mobile {
+                        width: 50%;
+                        min-width: 200px;
+                    }
+                    @include miniMobile {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    &__block {
+        display: flex;
+        flex-direction: column;
+        gap: 24px 0;
+        &_grid {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 24px;
+            gap: 0 24px;
+            @include desktop {
+                gap: 24px;
+            }
+            @include mobile {
+                padding: 0 20px;
+            }
+            &-item {
+                width: calc((100% - 24px) / 2);
+                background: $white;
+                border: 1px solid $greyLight;
+                box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.02);
+                border-radius: 16px;
+                padding: 4rem;
+                @include desktopLarge {
+                    padding: 30px;
+                }
+                @include desktop {
+                    width: 100%;
+                }
+                @include mobile {
+                    padding: 25px;
+                }
+                h2 {
+                    margin-bottom: 3rem;
+                }
+                .sale-block {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0 5.6rem;
+                    @include desktopLarge {
+                        gap: 0 20px;
+                    }
+                    @include mobile {
+                        gap: 24px;
+                    }
+                    &__item {
+                        width: calc((100% - 5.6rem) / 2);
+                        @include desktopLarge {
+                            width: calc((100% - 20px) / 2);
+                        }
+                        @include mobile {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            &--three {
+                gap: 0 20px;
+                @include tablet {
+                    gap: 24px;
+                }
+                .sale-info__block_grid-item {
+                    width: calc((100% - 40px) / 3);
+                    @include tablet {
+                        width: calc((100% - 24px) / 2);
+                    }
+                    @include mobile {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

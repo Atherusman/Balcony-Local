@@ -1,0 +1,26 @@
+@import 'src/assets/styles/variables';
+@import 'src/assets/styles/mixins';
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    @include fontStyle($fs: 10px, $fw: 700);
+    &--max {
+        width: 106px;
+        height: 3.2rem;
+        border-radius: 2.4rem;
+        padding: 0 10px;
+    }
+    &--m {
+        width: 12.4rem;
+        height: 3.2rem;
+        border-radius: 2.4rem;
+    }
+    &--s {
+        width: 9.4rem;
+        height: 3.2rem;
+        border-radius: 2.4rem;
+    }
+}

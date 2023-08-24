@@ -1,0 +1,64 @@
+@import './variables';
+
+@mixin fontStyle($ff: $Inter, $fs, $lh: 1, $fw: 400) {
+    font-family: $ff;
+    font-size: $fs;
+    line-height: $lh;
+    font-weight: $fw;
+    font-style: normal;
+}
+
+@mixin desktopLarge {
+    @media (max-width: $xxl) {
+        //1699px
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (max-width: $xl) {
+        //1399px
+        @content;
+    }
+}
+
+@mixin middleTablet {
+    @media (max-width: $l) {
+        //1299px
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: $m) {
+        //1199px
+        @content;
+    }
+}
+
+@mixin tabletMini {
+    @media (max-width: $s) {
+        //1024px
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: $xs) {
+        //767px
+        @content;
+    }
+}
+@mixin mobileMiddle {
+    @media (max-width: $xxs) {
+        //767px
+        @content;
+    }
+}
+
+@mixin miniMobile {
+    @media (max-width: $xxxs) {
+        //380px
+        @content;
+    }
+}

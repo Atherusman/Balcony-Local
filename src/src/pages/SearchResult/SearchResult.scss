@@ -1,0 +1,79 @@
+@import 'src/assets/styles/variables';
+@import 'src/assets/styles/mixins';
+.search-result {
+    flex: 1;
+    min-height: calc(100vh - 102px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding-bottom: 30px;
+    background-color: $greyLight;
+    &__header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 12px 0;
+        @include tablet {
+            flex-direction: column;
+            gap: 12px 0;
+            .base-select__addition {
+                display: none;
+            }
+        }
+        &_part {
+            flex: 1;
+            &:last-of-type {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 0 24px;
+            }
+            @include tablet {
+                width: 100%;
+            }
+            @include mobile {
+                width: 100%;
+                &:last-of-type {
+                    justify-content: space-between;
+                }
+            }
+            &-logo {
+                img {
+                    width: 35rem;
+                    height: auto;
+                    margin: 0 auto;
+                }
+            }
+            h1 {
+                text-transform: capitalize;
+                margin-bottom: 4px;
+                @include mobile {
+                    margin-bottom: 6px;
+                }
+            }
+            h5 {
+                color: $grey700;
+            }
+        }
+    }
+    &__body {
+        // flex: 1;
+        // height: calc(100% - 25px);
+        // overflow: hidden;
+        // overflow-y: auto;
+        // padding-bottom: 25px;
+        // margin-bottom: 25px;
+        height: calc(100% - 98px);
+        & > h4 {
+            text-align: center;
+            margin-top: 30px;
+            font-weight: 500;
+        }
+        a {
+            @include fontStyle($fs: 16px, $lh: 1.6, $fw: 500);
+            @include tablet {
+                font-size: 15px;
+            }
+        }
+    }
+}

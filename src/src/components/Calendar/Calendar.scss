@@ -1,0 +1,92 @@
+@import 'src/assets/styles/variables';
+@import 'src/assets/styles/mixins';
+.base-calendar {
+    &.react-calendar {
+        width: auto;
+        border: none;
+        background: transparent;
+        .react-calendar__navigation {
+            background: $white;
+            border: 1px solid $greyLight;
+            box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.02);
+            border-radius: 6px;
+            margin-bottom: 8px;
+            button {
+                font-size: 20px;
+                color: $grey400;
+            }
+            &__label__labelText {
+                @include fontStyle($fs: 18px, $lh: 1.22);
+                color: $black;
+                @include mobile {
+                    font-size: 16px;
+                }
+            }
+        }
+        .react-calendar__viewContainer {
+            background: $white;
+            border: 1px solid $greyLight;
+            box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.02);
+            border-radius: 6px;
+        }
+        .react-calendar__month-view__weekdays {
+            border-bottom: 1px solid $greyLight;
+            &__weekday {
+                padding: 13px;
+                abbr {
+                    @include fontStyle($fs: 18px, $lh: 1.22);
+                    color: $grey700;
+                    text-decoration: none;
+                    @include mobile {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+        .react-calendar__month-view__days__day--weekend:not(.react-calendar__month-view__days__day--neighboringMonth) {
+            abbr {
+                color: $black;
+            }
+        }
+        .react-calendar__tile {
+            padding: 0;
+            abbr {
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto;
+                border: 2px solid transparent;
+                border-radius: 50%;
+                @include fontStyle($fs: 18px, $lh: 1.22);
+                @include mobile {
+                    font-size: 16px;
+                }
+            }
+            &:enabled:hover,
+            &:enabled:focus {
+                background-color: transparent;
+            }
+            &--now {
+                background-color: transparent;
+                abbr {
+                    font-weight: 500;
+                    color: $violet;
+                    border-color: $violet;
+                }
+            }
+            &--active,
+            &--active:enabled:hover,
+            &--active:enabled:focus {
+                background-color: transparent;
+                abbr {
+                    font-weight: 500;
+                    color: $white;
+                    background-color: $violet;
+                    border-color: $violet;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,49 @@
+@import 'src/assets/styles/variables';
+@import 'src/assets/styles/mixins';
+
+.search-line {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid $grey200;
+    border-radius: 16px;
+    @include mobile {
+        flex-direction: column;
+        border: none;
+        border-radius: 0;
+    }
+    .main-input {
+        flex: 1;
+        border: none;
+        border-right: 1px solid $grey200;
+        border-radius: 0;
+        @include mobile {
+            border: 1px solid $grey200;
+            border-radius: 16px;
+            margin-bottom: 16px;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+        &:first-of-type {
+            border-top-left-radius: 16px;
+            border-bottom-left-radius: 16px;
+            flex: 1.5;
+            @include tabletMini {
+                flex: 1;
+            }
+            @include mobile {
+                border: 1px solid $grey200;
+                border-radius: 16px;
+            }
+        }
+        &:last-of-type {
+            border-top-right-radius: 16px;
+            border-bottom-right-radius: 16px;
+            border-right: none;
+            @include mobile {
+                border: 1px solid $grey200;
+                border-radius: 16px;
+            }
+        }
+    }
+}

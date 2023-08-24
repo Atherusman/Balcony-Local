@@ -1,0 +1,39 @@
+@import 'src/assets/styles/variables';
+
+.loader {
+    display: inline-flex;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    -webkit-animation: spin 1s linear infinite; /* Safari */
+    animation: spin 1s linear infinite;
+    z-index: 99999;
+    &--white {
+        border-color: $white;
+        border-bottom-color: transparent;
+    }
+    &--violet {
+        border-color: $grey700;
+        border-bottom-color: transparent;
+    }
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

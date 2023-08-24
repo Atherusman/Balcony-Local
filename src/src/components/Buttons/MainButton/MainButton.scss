@@ -1,0 +1,113 @@
+@import 'src/assets/styles/variables';
+@import 'src/assets/styles/mixins';
+
+.main-button {
+    @include fontStyle($fs: 16px, $fw: 500);
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    @include tabletMini {
+        @include fontStyle($fs: 14px, $fw: 500);
+    }
+    &__primary {
+        background-color: $violet;
+        color: $white;
+        border: none;
+        height: 48px;
+        border-radius: 16px;
+        padding: 0 10px;
+        border: 1px solid transparent;
+
+        &:hover {
+            opacity: 0.8;
+        }
+        &--black {
+            background-color: $black;
+        }
+        &--white {
+            border-color: $violet;
+            background-color: $white;
+            color: $violet;
+        }
+        &--maxi {
+            width: 100%;
+        }
+        &--l {
+            width: 18rem;
+        }
+        &--m {
+            padding: 0 2.6rem;
+        }
+        &--s {
+            width: 106px;
+            height: 3.6rem;
+            font-size: 12px;
+        }
+    }
+
+    &__outline {
+        border: 1px solid $violet;
+        color: $black;
+
+        &:hover {
+            background-color: $black;
+            color: $white;
+        }
+    }
+
+    &__link {
+        color: $black;
+        padding: 0 2.4rem;
+        &:hover {
+            color: $violet;
+        }
+    }
+
+    &__icon {
+        width: 64px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        background-color: $violet;
+        color: $white;
+        border: none;
+        border-radius: 16px;
+        @include tabletMini {
+            width: 60px;
+            height: 60px;
+            padding: 18px;
+        }
+        @include mobile {
+            padding: 0 18px;
+            height: 48px;
+        }
+        span {
+            font-size: 16px;
+            line-height: 1;
+            font-weight: 500;
+        }
+        &:hover {
+            opacity: 0.8;
+        }
+        &--white {
+            border: 1px solid $greyLight;
+            background-color: $white;
+        }
+        &--s {
+            width: 40px;
+            height: 40px;
+            border-radius: 6px;
+        }
+    }
+
+    &__disable {
+        opacity: 0.5;
+        cursor: not-allowed !important;
+        &:hover {
+            opacity: 0.5;
+            cursor: not-allowed !important;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+@import 'src/assets/styles/variables';
+@import 'src/assets/styles/mixins';
+.calendar-modal {
+    @include mobile {
+        height: 100vh;
+    }
+    &__block {
+        padding: 24px;
+        @include mobile {
+            padding: 20px;
+        }
+        &:first-of-type {
+            padding: 0px 24px 13px;
+            @include mobile {
+                padding: 0 20px 13px;
+            }
+        }
+        &:last-of-type{
+            padding-bottom: 0;
+        }
+        &.bg-white {
+            padding: 20px 24px;
+            border: 1px solid $greyLight;
+            box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.02);
+            @include mobile {
+                padding: 20px;
+            }
+        }
+        h2 {
+            margin-bottom: 9px;
+        }
+        h5 {
+            time {
+                font-weight: 700;
+            }
+        }
+    }
+}
