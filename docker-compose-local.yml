@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  app:
+    # change hostname according to your project
+    container_name: balcony_front_react
+    build:
+      context: ./
+      dockerfile: Dockerfile-local
+    restart: unless-stopped
+    volumes:
+      - ./src:/usr/src/app/my-app
+      - /usr/src/app/my-app/node_modules
+    ports:
+      - 3001:80

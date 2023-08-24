@@ -1,0 +1,21 @@
+FROM node:14-alpine as build-stage
+
+
+ENV REACT_APP_BASE_URL "https://balcony-api-dev.oneplusone.dev"
+ENV REACT_APP_MAP_KEY "AIzaSyCLXIr1KZ0NtL1Ryd6e6cB_B8T_Z8RPjZg"
+
+RUN #yarn add -g http-server
+WORKDIR /app
+COPY ./src .
+RUN yarn
+RUN yarn run build
+COPY ./.htaccess ./build/.htaccess
+
+
+FROM httpd:2.4.52-alpine as production-stage
+RUN sed -i '/LoadModule rewrite_module/s/^#//g' /usr/local/apache2/conf/httpd.conf
+RUN sed -i 's/AllowOverride None/AllowOverride All/g' /usr/local/apache2/conf/httpd.conf
+#COPY --from=build-stage /app/.env /usr/local/apache2/htdocs
+COPY --from=build-stage /app/build /usr/local/apache2/htdocs
+ADD .htpasswd /etc/.htpasswd
+EXPOSE 80
